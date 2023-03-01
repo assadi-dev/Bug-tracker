@@ -1,9 +1,11 @@
 
-#Projet 1 - Bug-tracker
+# Projet 1 - Bug-tracker
 
 Réalisation de la partie frontend d'une application qui de recencer les bugs rencontre et les traité
 
-##Zonning du projet
+[DEMO](https://assadi-dev.github.io/Bug-tracker/)
+
+## Zonning du projet
 
 ![alt wireframe-page connexion](./doc/Wireframe%20-%20Connexion.jpg)
 
