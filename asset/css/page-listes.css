@@ -6,3 +6,106 @@
     padding-left: 18px;
     padding-right: 18px;
 }
+
+.row-bugs_details{
+    width: 90vw;
+    margin:0 auto 2rem auto;
+    padding-left: 18px;
+    padding-right: 18px;
+    flex-direction: column;
+
+}
+
+.card-info
+{
+
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+   padding: 1.5rem 3rem;
+   font-family: Orbitron;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   border:2px solid #111;
+   color:#111;
+   margin: 1.3rem auto;
+
+}
+
+.card-info svg
+{
+    color: inherit;
+    width: 30px;
+    height: 30px;
+    margin-right:0.6rem;
+}
+
+.totals{
+    color:var( --red-primary);
+    border-color: var( --red-primary);
+    background-color: var( --red-third);
+}
+
+.en-cours{
+    color:var( --blue-dark);
+    border-color: var(--blue-dark);
+    background-color: var(--blue-third);
+}
+
+.success
+{
+    color:var( --green-primary);
+    border-color: var(--green-primary);
+    background-color: var(--green-secondar);
+}
+
+
+@media screen and (min-width:550px) {
+
+    .row-bugs_details{
+        width: 95vw;
+        flex-direction: row;
+ 
+    
+    }
+    .card-info
+{
+
+  
+   padding: 1.5rem 3rem;
+   margin: 1.3rem 1rem;
+   margin-bottom: 6rem;
+
+
+}
+}
+
+@media screen and (min-width:990px) {
+    .row-bugs_details{
+        width: 90vw;
+        flex-direction: row;
+        margin-bottom: 6rem;
+    
+    }
+
+    .card-info
+{
+
+    border-radius:10px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+   padding: 3rem 6rem;
+   font-family: Orbitron;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   margin: 1.3rem 2rem;
+   font-size: 1.6rem;
+
+}
+}
