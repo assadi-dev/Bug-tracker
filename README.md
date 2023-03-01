@@ -14,7 +14,7 @@ Réalisation de la partie frontend d'une application qui de recencer les bugs re
 ![alt wireframe-page ajouter un bug](./doc/Wireframe%20-%20Page%20Ajouter%20un%20bug.jpg)
 
 
-##Maquette du projet
+## Maquette du projet
 
 **Palette graphique:** ![alt Palette graphique](./doc/Palette.jpg)
 
