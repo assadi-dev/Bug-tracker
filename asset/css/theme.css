@@ -353,20 +353,31 @@ object-fit: cover;
 }
 .table{
     border:none;
+    border-spacing: 0 15px;
+    border-collapse: separate;
+    width: 90%;
+    margin: auto;
 }
 
-.table thead
+.table thead th, .table tbody td
 {
-    display: table-caption;
-    padding: 2rem 0;
+    border: none;
     vertical-align: middle;
-    font-size: 1.4rem;
-    text-align: left;
-
+    text-align: left;   
 }
-.table thead th{
-    margin-right: 1rem;
-    
+
+.table thead th:last-of-type {
+    text-align: center;
+  }
+  .table tbody td:last-of-type {
+    text-align: center;
+  }
+
+
+
+
+.table thead,.table th,.table td {
+    padding: 0,8rem;
 }
 
 
