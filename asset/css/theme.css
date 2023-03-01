@@ -24,6 +24,7 @@
     --red-third:#F8A3B2;
     --green-primary:#02735B;
     --green-secondary:#06D6A0;
+    --green-third:#7CFBDA;
     --blue-dark:#125799;
     --blue-primary:#1474E5;
     --blue-secondary:#4895EF;
@@ -223,7 +224,7 @@ background-color: var(--blue-0);
     font-weight: bold;
 
 }
-.form-control input{
+.form-control input ,.form-control  textarea {
     width: 100%;
     background-color: transparent;
     border-radius: 8px;
@@ -236,9 +237,11 @@ background-color: var(--blue-0);
     outline:var(--blue-primary);
 }
 
-.form-control input:focus{
+.form-control input:focus,.form-control  textarea:focus{
     border: 2px solid var(--blue-primary);
 }
+
+
 
 .theme-wrapper{
     max-width:100%;
