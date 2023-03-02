@@ -72,7 +72,7 @@ const login = (username, password) => {
   return instance.get(`/login/${username}/${password}`);
 };
 
-const signUp = () => {
+const signUp = (username, password) => {
   return instance.get(`/signup/${username}/${password}`);
 };
 

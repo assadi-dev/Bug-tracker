@@ -74,19 +74,21 @@ document.addEventListener("DOMContentLoaded", () => {
         cancelButtonColor: "#9A031D",
         cancelButtonText: "Annuler",
       }).then((result) => {
-        deletBug(id).then((res) => {
-          if (result.isConfirmed) {
-            Swal.fire(
-              "Supprimé",
-              `Le bug ${title} à été supprimé`,
-              "success"
-            ).then((res) => {
-              if (res.isConfirmed) {
-                location.reload();
-              }
-            });
-          }
-        });
+        if (result.isConfirmed) {
+          deletBug(id).then((res) => {
+            if (result.isConfirmed) {
+              Swal.fire(
+                "Supprimé",
+                `Le bug ${title} à été supprimé`,
+                "success"
+              ).then((res) => {
+                if (res.isConfirmed) {
+                  location.reload();
+                }
+              });
+            }
+          });
+        }
       });
     };
 
