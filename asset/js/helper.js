@@ -71,3 +71,19 @@ const isEmpty = (value) => {
 
   return false;
 };
+
+/**
+ * retourne la statue en chaine de caractere
+ * @param {number} state
+ * 0 = non traité , 1 = non traité ,  2  = traité
+ */
+const getState = (state) => {
+  switch (state) {
+    case 0:
+      return "non traité";
+    case 1:
+      return "en cours";
+    case 2:
+      return "traité";
+  }
+};
