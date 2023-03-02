@@ -331,7 +331,7 @@ width: 100%;
 /**Navbar **/
 .header-nav
 {
-padding: 2rem 1.8rem;
+padding: 1.4rem 1.8rem;
  background-color: var(--black);
  position: sticky;
  top: 0;
@@ -353,7 +353,6 @@ object-fit: cover;
     display: block;
 
     background-color: var(--black);
-    color: var(--white);
     width: 100%;
     font-family: Orbitron;
     font-size: 2rem;
@@ -363,11 +362,24 @@ object-fit: cover;
     display: flex;
     flex-direction: column;
     margin-top: 28px;
+ 
+}
+
+.list-nav li{
+    color: #ffffff80;
+}
+.list-nav li:hover{
+    color: var(--white);
+}
+
+.list-nav .active{
+    color: var(--white); 
 }
 
 .header-nav nav figure{
     display: flex;
     align-items: center;
+    color: var(--white);
   
 }
 .header-nav nav figure figcaption{
@@ -633,13 +645,12 @@ padding: 0.8rem;
     }
     .header-nav nav{
         display: flex;
-        padding: 1.8rem 2.2rem;
+        padding: 1.2rem 2.2rem;
         background-color: var(--black);
-        color: var(--white);
         width: 100%;
         font-family: Orbitron;
         justify-content: space-between;
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
     
     .header-nav nav figure{
