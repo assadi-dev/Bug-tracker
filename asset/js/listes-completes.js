@@ -125,12 +125,25 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /**Recuperation et affichage de la listes completes des bugs */
-  let completeListBugs = [];
+
   const table = document.querySelector(".table-section table");
   const tbody = table.querySelector("tbody");
 
   const loadData = (data) => {
     if (data.result.bug.length > 0) {
+      const StatsResume = {
+        totals: document.querySelector(".card-info #state-bugs"),
+        cours: document.querySelector(".card-info #state-en-cours"),
+        traite: document.querySelector(".card-info #state-traite"),
+      };
+
+      let en_cours = bugStateFiltered("1", data.result.bug);
+      let traiter = bugStateFiltered("2", data.result.bug);
+
+      StatsResume.totals.textContent = `${data.result.bug.length} bugs`;
+      StatsResume.cours.textContent = `${en_cours.length} en cours`;
+      StatsResume.traite.textContent = `${traiter.length} traité`;
+
       tbody.childNodes[0].remove();
       data.result.bug.forEach((bug) => {
         tbody.append(generateRow(bug));
@@ -143,9 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   try {
-    let row = emptyRow();
     tbody.innerHTML = `<tr><td colspan="6">Recuperation des données </td></tr>`;
-
     getCompleteBugs().then((res) => {
       let data = res.data;
       if (data.result.status != "failure") {

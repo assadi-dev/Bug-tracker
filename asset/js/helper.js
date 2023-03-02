@@ -215,3 +215,7 @@ const sleep = (callback, delay) => {
 const refresh = () => {
   location.reload();
 };
+
+const bugStateFiltered = (state, list) => {
+  return list.filter((bug) => bug.state == state);
+};
