@@ -7,6 +7,20 @@ const instance = axios.create({
   baseURL: API_URL,
 });
 
+/**Insertion du token à chaque appel ap*/
+instance.interceptors.request.use(
+  (request) => {
+    let urlRequest = request.url;
+    let { token } = getItem();
+    urlRequest = urlRequest.replace("{token}", token);
+    request.url = urlRequest;
+    return request;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
 /**LocalStorage **/
 
 /**
@@ -49,7 +63,7 @@ const clearItem = () => {
   localStorage.clear();
 };
 
-/**Action Api */
+/**Action Authentification Api */
 
 const login = (username, password) => {
   return instance.get(`/login/${username}/${password}`);
@@ -75,7 +89,7 @@ const isEmpty = (value) => {
 /**
  * retourne la statue en chaine de caractere
  * @param {number} state
- * 0 = non traité , 1 = non traité ,  2  = traité
+ * 0 = non traité , 1 = en cours ,  2  = traité
  */
 const getState = (state) => {
   switch (state) {
@@ -86,4 +100,25 @@ const getState = (state) => {
     case 2:
       return "traité";
   }
+};
+
+//Api Endpoints
+
+/**obtenir la liste des developpeurs */
+const getlistDevloppeurs = () => {
+  return instance.get(`users/{token}`);
+};
+
+/**obtenir la liste completes des bugs*/
+const getCompleteBugs = () => {
+  return instance.get(`list/{token}/0`);
+};
+
+/**obtenir la liste des bugs assigner */
+const getBugsAssigned = (id) => {
+  return instance.get(`list/{token}/${id}`);
+};
+
+const getFulDate = (timestamp) => {
+  return dayjs(timestamp).format("DD-MM-YYYY HH:mm");
 };

@@ -540,6 +540,13 @@ padding: 0.8rem;
     border-radius: 0 5px 5px 0;
   }
 
+  .table select{
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    min-width: 100px;
+  }
+
 
 /** Media queries  **/
 @media screen and (min-width:550px){
