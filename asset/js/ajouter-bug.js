@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((res) => {
           Swal.fire({
             title: "Nouveau bug ajouté",
-            text: `Le bug ${title} à bien été enregistré`,
+            text: `Le bug ${title.value} à bien été enregistré`,
             icon: "success",
             showCancelButton: false,
             confirmButtonColor: "#1474E5",
