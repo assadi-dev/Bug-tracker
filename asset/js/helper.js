@@ -91,13 +91,13 @@ const isEmpty = (value) => {
  * @param {number} state
  * 0 = non traité , 1 = en cours ,  2  = traité
  */
-const getState = (state) => {
+const getColorState = (state) => {
   switch (state) {
-    case 0:
+    case "0":
       return "non traité";
-    case 1:
+    case "1":
       return "en cours";
-    case 2:
+    case "2":
       return "traité";
   }
 };
@@ -106,19 +106,81 @@ const getState = (state) => {
 
 /**obtenir la liste des developpeurs */
 const getlistDevloppeurs = () => {
-  return instance.get(`users/{token}`);
+  return instance.get(`/users/{token}`);
 };
 
 /**obtenir la liste completes des bugs*/
 const getCompleteBugs = () => {
-  return instance.get(`list/{token}/0`);
+  return instance.get(`/list/{token}/0`);
 };
 
 /**obtenir la liste des bugs assigner */
 const getBugsAssigned = (id) => {
-  return instance.get(`list/{token}/${id}`);
+  return instance.get(`/list/{token}/${id}`);
+};
+
+/**
+ *
+ * @param {*} bug_id identifiant du bug
+ * @param {*} value valeur du nouveau state
+ * @returns
+ */
+const updateState = (bug_id, value) => {
+  return instance.get(`/state/{token}/${bug_id}/${value}`);
+};
+
+/**
+ *
+ * @param {*} bug_id identifiant du bug
+ */
+const deletBug = (bug_id) => {
+  return instance.get(`/delete/{token}/${bug_id}`);
 };
 
 const getFulDate = (timestamp) => {
   return dayjs(timestamp).format("DD-MM-YYYY HH:mm");
+};
+
+const alertSuccess = (message) => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
+  Toast.fire({
+    icon: "success",
+    title: message,
+  });
+};
+
+const alertError = (message) => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: false,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+
+  Toast.fire({
+    icon: "error",
+    title: message,
+  });
+};
+
+const sleep = (callback, delay) => {
+  setTimeout(() => {
+    callback();
+  }, delay);
 };
