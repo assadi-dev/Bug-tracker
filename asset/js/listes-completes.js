@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const deleteBtn = (id, title) => {
     const btn = document.createElement("button");
+    btn.title = "Supprimer le bug";
     btn.classList.add("action-btn-delete");
     btn.innerHTML = `${icons.Trash}
     `;
@@ -95,8 +96,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const showDescriptionBtn = (description) => {
     const btn = document.createElement("button");
     btn.classList.add("action-btn-show");
-    btn.innerHTML = `${icons.Eye}
-    `;
+    btn.innerHTML = `${icons.Eye}`;
+    btn.title = "Voir la description du bug";
+    btn.onclick = () => {
+      Swal.fire("Description", description, "");
+    };
     return btn;
   };
 
