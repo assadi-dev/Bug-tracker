@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
         text: `Vous êtes sur le point de supprimer ${title} `,
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: "#3085d6",
+        confirmButtonColor: "#1474E5",
         confirmButtonText: "Supprimer",
-        cancelButtonColor: "#d33",
+        cancelButtonColor: "#9A031D",
         cancelButtonText: "Annuler",
       }).then((result) => {
         deletBug(id).then((res) => {
@@ -129,23 +129,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const table = document.querySelector(".table-section table");
   const tbody = table.querySelector("tbody");
 
+  const loadData = (data) => {
+    if (data.result.bug.length > 0) {
+      tbody.childNodes[0].remove();
+      data.result.bug.forEach((bug) => {
+        tbody.append(generateRow(bug));
+      });
+    } else {
+      let row = emptyRow();
+      tbody.append(row);
+      tbody.childNodes[0].remove();
+    }
+  };
+
   try {
     let row = emptyRow();
-    tbody.append(row);
+    tbody.innerHTML = `<tr><td colspan="6">Recuperation des données </td></tr>`;
 
     getCompleteBugs().then((res) => {
       let data = res.data;
-      if (data) {
-        tbody.childNodes[1].remove();
-        tbody.firstChild;
-        data.result.bug.length > 0 &&
-          data.result.bug.forEach((bug) => {
-            tbody.append(generateRow(bug));
-          });
+      if (data.result.status != "failure") {
+        sleep(() => loadData(data), 2000);
+      } else {
+        let row = emptyRow();
+        tbody.append(row);
+        tbody.childNodes[0].remove();
+        Swal.fire("Erreur", data.result.message, "error").then((res) => {
+          if (res.isConfirmed) {
+            clearItem();
+            sleep(refresh, 1000);
+          }
+        });
       }
     });
   } catch (error) {
     let row = emptyRow();
     tbody.append(row);
+    console.log(error);
   }
 });

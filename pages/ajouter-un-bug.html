@@ -56,25 +56,25 @@
 
 
 
-<section class="form-section" >
+<section class="form-section ajouter-bug" >
 
    <form >
 
     <h1 class="title text-center">Déclarer un nouveau bug </h1>
 
     <div class="action-row d-flex  align-center" >
-        <button class="btn btn-primary">Sauvegarder</button>
+        <button class="btn btn-primary" type="submit"  >Sauvegarder</button>
     </div>
 
     <div class="form-content">
         <div class="form-control" >
-            <label for="designation">Désignation</label>  
-            <input type="text" id="designation" name="designation" > 
+            <label for="title">Désignation</label>  
+            <input type="text" id="title" name="title" > 
         </div>
  
         <div class="form-control" >
-            <label for="descriptipn">Déscription</label>  
-            <textarea  id="descriptipn" name="descriptipn"  rows="10"  ></textarea>
+            <label for="description">Déscription</label>  
+            <textarea  id="description" name="description"  rows="10"  ></textarea>
         </div>
     </div>
   
@@ -87,10 +87,14 @@
 
 
 </main>
-
-<script src="../lib/axios/axios.min.js"></script>
+ <!-- librairie -->
+ <script src="../lib/axios/axios.min.js"></script>
+ <script src="../lib/dayjs/dayjs.min.js"></script>
+ <script src="../lib/sweeetalert/sweetalert2.all.min.js"></script>
+  <!-- Script -->
 <script src="../asset/js/theme.js"></script>
 <script src="../asset/js/helper.js"></script>
 <script src="../asset/js/main.js"></script>
+<script src="../asset/js/ajouter-bug.js"></script>
 </body>
 </html>

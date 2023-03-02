@@ -5,6 +5,9 @@ const NAME_DATA_STORAGE = "x-bug-tracker_data_sstorage";
 
 const instance = axios.create({
   baseURL: API_URL,
+  headers: {
+    "Content-type": "text/plain",
+  },
 });
 
 /**Insertion du token à chaque appel ap*/
@@ -137,6 +140,24 @@ const deletBug = (bug_id) => {
   return instance.get(`/delete/{token}/${bug_id}`);
 };
 
+/**
+ *
+ * @param {*} user_id id du developpeur
+ * @param {*} body contenus à enregistré dans la base de donnée
+ * ```json
+ * {
+ * "title":"",
+ * "description":""
+ * }
+ * ```
+ *
+ *
+ *
+ */
+const addBug = (user_id, body) => {
+  return instance.post(`/add/{token}/${user_id}`, body);
+};
+
 const getFulDate = (timestamp) => {
   return dayjs(timestamp).format("DD-MM-YYYY HH:mm");
 };
@@ -179,8 +200,18 @@ const alertError = (message) => {
   });
 };
 
+const modalSuccsess = (title, message) => {
+  Swal.fire(title, message, " succes");
+};
+
+const modalError = (message) => {};
+
 const sleep = (callback, delay) => {
   setTimeout(() => {
     callback();
   }, delay);
+};
+
+const refresh = () => {
+  location.reload();
 };
