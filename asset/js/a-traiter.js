@@ -113,15 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
     tr.innerHTML = `<td>${title}</td><td>${getFulDate(
       timestamp * 1000
     )}</td><td></td><td></td><td class="action-col"></td>`;
+    tr.childNodes[2].textContent = "Vous";
     tr.childNodes[3].append(stateSelectore(id, state));
     tr.childNodes[4].append(showDescriptionBtn(description));
     tr.childNodes[4].append(deleteBtn(id, title));
 
-    getlistDevloppeurs().then((res) => {
+    /*     getlistDevloppeurs().then((res) => {
       let data = res.data.result.user;
       devloppeur = data[user_id];
       tr.childNodes[2].textContent = devloppeur;
-    });
+    }); */
 
     return tr;
   };
