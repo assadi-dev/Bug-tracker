@@ -21,15 +21,16 @@
         <div class="form-control text-white mx-auto " >
             <label for="username">Nom d'utilisateur</label>
             <input type="text" id="username" name="username"   >
-           <p class="error-validation" ></p>
         </div>
 
         
         <div class="form-control text-white mx-auto" >
             <label for="password">Mot de passe</label>
             <input id="password" name="password" type="password"   >
-           <p class="error-validation" ></p>
+        
         </div>
+
+        <p class="error-validation" ></p>
 
     <div class="form-control mx-auto" >
         <button class="btn-large btn-primary" type="submit">Entrer</button>
@@ -44,7 +45,8 @@
 
 
 </main>
-
-<script src="./asset/js/main.js" ></script>
+<script src="../lib/axios/axios.min.js"></script>
+<script src="./asset/js/helper.js" ></script>
+<script src="./asset/js/auth.js" ></script>
 </body>
 </html>
