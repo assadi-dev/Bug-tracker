@@ -166,7 +166,7 @@ const getFulDate = (timestamp) => {
   return dayjs(timestamp).format("DD-MM-YYYY HH:mm");
 };
 
-const alertSuccess = (message) => {
+const alertSuccess = (message, callback) => {
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -182,6 +182,12 @@ const alertSuccess = (message) => {
   Toast.fire({
     icon: "success",
     title: message,
+  }).then((res) => {
+    if (res.isDismissed) {
+      if (callback) {
+        callback();
+      }
+    }
   });
 };
 
@@ -202,6 +208,7 @@ const alertError = (message) => {
     icon: "error",
     title: message,
   });
+  return Toast;
 };
 
 const modalSuccsess = (title, message) => {
