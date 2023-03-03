@@ -565,10 +565,10 @@ padding: 0.8rem;
 
 
 
-  tbody tr td:first-child {
+  tbody tr td:first-of-type {
     border-radius: 5px 0 0 5px;
   }
-  .table tbody tr td:last-child {
+  .table tbody tr td:last-of-type {
     border-radius: 0 5px 5px 0;
   }
 
@@ -583,12 +583,7 @@ padding: 0.8rem;
     min-width: 100px;
   }
 
-  .action-col{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+
 
   .action-col button{
     text-align: center;
