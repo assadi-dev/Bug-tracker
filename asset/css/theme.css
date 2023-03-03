@@ -647,7 +647,24 @@ padding: 0.8rem;
     background-color: #2B2D42;
   }
   
+/** Animation **/
 
+.waiting{
+    animation:waiting 0.35s ease-in-out alternate infinite;
+    -webkit-animation:waiting 0.35s ease-in-out alternate infinite;
+}
+
+@keyframes waiting{
+    to {
+        transform: scale(0.8);
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+        -o-transform: scale(0.8);
+        opacity: 0.5;
+    }
+    
+}
 
 
 

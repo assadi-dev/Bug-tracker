@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   try {
-    tbody.innerHTML = `<tr><td colspan="6">Recuperation des données </td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="6" class="waiting">Recuperation des données </td></tr>`;
     getBugsAssigned(user_id).then((res) => {
       let data = res.data;
       if (data.result.status != "failure") {
