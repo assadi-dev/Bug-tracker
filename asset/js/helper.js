@@ -76,6 +76,10 @@ const signUp = (username, password) => {
   return instance.get(`/signup/${username}/${password}`);
 };
 
+const logout = () => {
+  return instance.get(`/logout/{token}`);
+};
+
 /**
  * verififie si une chaine de caracter est vide
  * @param {string} value

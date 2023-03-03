@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
   const logout_btn = document.querySelector(".logout_btn");
 
   logout_btn.onclick = () => {
-    clearItem();
-    location.replace("../../index.html");
+    logout().then(() => {
+      clearItem();
+      location.replace("../../index.html");
+    });
   };
 });
