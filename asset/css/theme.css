@@ -383,7 +383,7 @@ object-fit: cover;
 }
 
 .list-nav li{
-    color: #ffffff80;
+    color: #ffffff95;
 }
 .list-nav li:hover{
     color: var(--white);
