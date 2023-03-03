@@ -35,6 +35,9 @@
    color:#111;
    margin: 1.3rem auto;
    user-select: none;
+   width: 75%;
+   justify-content: center;
+ 
 
 }
 
@@ -96,6 +99,7 @@
    padding: 1.5rem 3rem;
    margin: 1.3rem 1rem;
    margin-bottom: 6rem;
+   width: fit-content;
 
 
 }
