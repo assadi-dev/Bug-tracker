@@ -609,7 +609,44 @@ padding: 0.8rem;
 
 }
 
-
+/**ScrollBar**/
+/* Firefox */
+* {
+    scrollbar-width:auto;
+    scrollbar-color: #2B2D42 transparent;
+  }
+  
+  /* Chrome, Edge and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: #8D99AE80;
+  }
+  
+  *::-webkit-scrollbar-track:hover {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-track:active {
+    background-color: #B8C0C2;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #2B2D42;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #2B2D4250;
+  }
+  
+  *::-webkit-scrollbar-thumb:active {
+    background-color: #2B2D42;
+  }
+  
 
 
 
