@@ -48,7 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     select.onchange = (e) => {
       let newState = e.target.value;
       updateState(id, newState)
-        .then(() => alertSuccess("L'etat du bug à été mise à jour"))
+        .then(() =>
+          alertSuccess("L'etat du bug à été mise à jour", () => refresh())
+        )
         .catch((error) => {
           alertError(error.message);
         });
