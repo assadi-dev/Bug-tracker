@@ -30,10 +30,13 @@ Réalisation de la partie frontend d'une application qui de recencer les bugs re
 - css
 - javasscript vanilla
 
-### librairie 
+### Librairies 
 -  [Axios](https://axios-http.com/fr/docs/intro) (pour les rquetes ajax)
 - [Day.js](https://day.js.org/) pour le manipulations des date
 - [Sweetalert](https://sweetalert2.github.io/#download) pour les fenetres popup 
+
+
+**PS:** le site n'est pas fonctionnel en ligne pour cause github blocque les requete de l'api qui n'est securisé vous devez télécharger et lancer depuis un serveur local
 
 
 [DEMO](https://assadi-dev.github.io/Bug-tracker/)
