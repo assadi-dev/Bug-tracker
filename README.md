@@ -36,7 +36,7 @@ Réalisation de la partie frontend d'une application qui de recencer les bugs re
 - [Sweetalert](https://sweetalert2.github.io/#download) pour les fenetres popup 
 
 
-**PS:** le site n'est pas fonctionnel en ligne pour cause github bloque les requete de l'api qui n'est securisé vous devez télécharger et lancer depuis un serveur local
+**PS:** le site n'est pas fonctionnel en ligne pour cause github bloque les requetes de l'api qui n'est securisé vous devez télécharger et lancer depuis un serveur local
 
 
 [DEMO](https://assadi-dev.github.io/Bug-tracker/)
