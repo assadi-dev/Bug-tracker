@@ -24,7 +24,16 @@ Réalisation de la partie frontend d'une application qui de recencer les bugs re
 
 ![alt maquette-page ajouter un bug](./doc/Maquette-%20Page%20Ajouter%20un%20bug.jpg)
 
+## Technologie utilisés
 
+- html 
+- css
+- javasscript vanilla
+
+### librairie 
+-  [Axios](https://axios-http.com/fr/docs/intro) (pour les rquetes ajax)
+- [Day.js](https://day.js.org/) pour le manipulations des date
+- [Sweetalert](https://sweetalert2.github.io/#download) pour les fenetres popup 
 
 
 [DEMO](https://assadi-dev.github.io/Bug-tracker/)
