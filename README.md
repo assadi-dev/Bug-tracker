@@ -1,7 +1,8 @@
+#Projet de formation
 
-# Projet 1 - Bug-tracker
+## Projet 1 - Bug-tracker
 
-Réalisation de la partie frontend d'une application qui de recencer les bugs rencontre et les traité
+ Réalisation de la partie frontend d'une application qui  recence les bugs rencontre et les traité
 
 [DEMO](https://assadi-dev.github.io/Bug-tracker/)
 
